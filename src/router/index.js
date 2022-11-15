@@ -34,9 +34,9 @@ const routes = [
         component: () => import('@/views/params/index.vue')
       },
       {
-        path: 'reports',
-        name: 'reports',
-        component: () => import('@/views/reports/index.vue')
+        path: 'dashbord',
+        name: 'dashbord',
+        component: () => import('@/views/dashbord/index.vue')
       },
       {
         path: 'rights',

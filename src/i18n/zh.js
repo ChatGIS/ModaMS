@@ -10,7 +10,7 @@ export default {
     params: '分类参数',
     categories: '商品分类',
     orders: '订单列表',
-    reports: '数据报表',
+    dashbord: '仪表盘',
     materialManage: '资料管理',
     website: '学习网站',
     article: '技术文章',

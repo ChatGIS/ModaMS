@@ -10,7 +10,7 @@ export default {
     params: 'sorting list',
     categories: 'goods category',
     orders: 'order list',
-    reports: 'data report',
+    dashbord: 'dashbord',
     materialManage: 'material management',
     website: 'websites list',
     article: 'articles list',
