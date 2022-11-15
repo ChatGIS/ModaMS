@@ -1,7 +1,7 @@
 export default {
   menus: {
-    '/': 'home',
-    home: 'home',
+    '/': 'Home',
+    home: 'Home',
     userManage: 'user management',
     users: 'users list',
     roles: 'roles list',
@@ -12,7 +12,7 @@ export default {
     orders: 'order list',
     dashbord: 'dashbord',
     materialManage: 'material management',
-    website: 'websites list',
+    website: 'Websites',
     article: 'articles list',
     engword: 'English word list',
   },
@@ -39,14 +39,18 @@ export default {
     placeholder: 'Please enter a user name to search for'
   },
   tableWebsite: {
-    name: 'name',
-    url: 'url',
+    favicon: 'Favicon',
+    name: 'Name',
+    url: 'URL',
     type: 'type',
-    tags_name: 'tags',
-    create_time: 'create_time',
-    action: 'action',
-    search: 'search',
-    add: 'add website',
+    tags_name: 'Tags',
+    num_click: 'ClickNum',
+    create_time: 'CreateTime',
+    update_time: 'UpdateTime',
+    description: 'Description',
+    action: 'Action',
+    search: 'Search',
+    add: 'Add Website',
     placeholder: 'Please enter a website name to search for'
   },
   tableArticle: {

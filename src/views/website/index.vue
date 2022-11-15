@@ -2,21 +2,22 @@
   <el-card>
     <el-row :gutter="20" class="header">
       <el-col :span="7">
-        <el-input :placeholder="$t('tableWebsite.placeholder')"
-          clearable
-          v-model="queryForm.query"></el-input>
+        <el-input :placeholder="$t('tableWebsite.placeholder')" clearable v-model="queryForm.query"></el-input>
       </el-col>
       <el-button type="primary" :icon="Search" @click="initGetUsersList">{{ $t('tableWebsite.search') }}</el-button>
       <el-button type="primary" @click="handleDialogValue(null)">{{ $t('tableWebsite.add') }}</el-button>
     </el-row>
     <el-table :data="tableData" stripe style="width: 100%">
-      <el-table-column :width="item.width"
-          :prop=item.prop :label="$t(`tableWebsite.${item.label}`)" v-for="(item, index) in options" :key="index">
+      <el-table-column :width="item.width" :prop=item.prop :label="$t(`tableWebsite.${item.label}`)"
+        v-for="(item, index) in options" :key="index">
+        <template v-slot="{ row }" v-if="item.prop === 'favicon'">
+          <el-image style="width: 50px; height: 50px" :src="row.favicon" fit="fill" />
+        </template>
         <template v-slot="{ row }" v-if="item.prop === 'url'">
-          <el-link type="primary" :href="row.url" target="_blank">{{row.url}}</el-link>
+          <el-link type="primary" :href="row.url" target="_blank">{{ row.url }}</el-link>
         </template>
         <template v-slot="{ row }" v-else-if="item.prop === 'mg_state'">
-          <el-switch v-model="row.state" @change="changeState(row)"/>
+          <el-switch v-model="row.state" @change="changeState(row)" />
         </template>
         <template v-slot="{ row }" v-else-if="item.prop === 'tags_name'">
           <el-tag v-for="item in row.tags_name.split(',')" v-if="row.tags_name != null">{{item}}</el-tag>
@@ -35,26 +36,14 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-pagination
-        v-model:currentPage=queryForm.pagenum
-        v-model:page-size=queryForm.pagesize
-        :page-sizes="[5, 10, 20, 50]"
-        :small="small"
-        :disabled="disabled"
-        :background="background"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total=total
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-    >
+    <el-pagination v-model:currentPage=queryForm.pagenum v-model:page-size=queryForm.pagesize
+      :page-sizes="[7, 10, 20, 50]" :small="small" :disabled="disabled" :background="background"
+      layout="total, sizes, prev, pager, next, jumper" :total=total @size-change="handleSizeChange"
+      @current-change="handleCurrentChange">
     </el-pagination>
   </el-card>
-  <Dialog v-model="dialogVisible"
-          :dialogTitle="dialogTitle"
-          v-if=dialogVisible
-          @initUserList="initGetUsersList"
-          :dialogTableValue="dialogTableValue"
-  :selectedTagIds="selectedTagIds"></Dialog>
+  <Dialog v-model="dialogVisible" :dialogTitle="dialogTitle" v-if=dialogVisible @initUserList="initGetUsersList"
+    :dialogTableValue="dialogTableValue" :selectedTagIds="selectedTagIds"></Dialog>
 </template>
 
 <script setup>
@@ -68,7 +57,7 @@ import { isNull } from "@/utils/filters";
 const queryForm = ref({
   query: '',
   pagenum: 1,
-  pagesize: 10,
+  pagesize: 7,
   type: 0
 })
 const total = ref(0)
@@ -109,7 +98,7 @@ const changeState = async (info) => {
 
 // 添加/编辑用户弹框显隐
 const handleDialogValue = (row) => {
-  if (isNull(row)){
+  if (isNull(row)) {
     dialogTitle.value = '添加网站'
     dialogTableValue.value = {}
   } else {
@@ -145,14 +134,14 @@ const delUser = (row) => {
 </script>
 
 <style lang="scss" scoped>
-  .header {
-    padding-bottom: 16px;
-    box-sizing: border-box;
-  }
+.header {
+  padding-bottom: 16px;
+  box-sizing: border-box;
+}
 
-  ::v-deep .el-pagination {
-    padding-top: 16px;
-    box-sizing: border-box;
-    justify-content: right;
-  }
+::v-deep .el-pagination {
+  padding-top: 16px;
+  box-sizing: border-box;
+  justify-content: right;
+}
 </style>

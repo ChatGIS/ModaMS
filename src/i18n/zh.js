@@ -36,6 +36,7 @@ export default {
     placeholder: '请输入搜索的用户姓名'
   },
   tableWebsite: {
+    favicon: '图标',
     name: '网站名称',
     url: '地址',
     type: '类型',
@@ -43,7 +44,7 @@ export default {
     create_time: '创建时间',
     update_time: '修改时间',
     description: '描述信息',
-    num_click: '使用次数',
+    num_click: '点击量',
     action: '操作',
     search: '搜索',
     add: '添加网站',
