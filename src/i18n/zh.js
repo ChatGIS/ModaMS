@@ -15,6 +15,7 @@ export default {
     website: '学习网站',
     article: '技术文章',
     engword: '英文单词',
+    saying: '语录管理',
   },
   login: {
     title: '用户登录',
@@ -49,6 +50,21 @@ export default {
     search: '搜索',
     add: '添加网站',
     placeholder: '请输入搜索的网站名称'
+  },
+  tableSaying: {
+    id: '序号',
+    name: '语录',
+    author: '作者',
+    book: '书名',
+    article: '文章名',
+    create_time: '创建时间',
+    update_time: '修改时间',
+    description: '描述信息',
+    num_click: '点击量',
+    action: '操作',
+    search: '搜索',
+    add: '添加语录',
+    placeholder: '请输入搜索的语录'
   },
   tableArticle: {
     name: '文章名称',

@@ -1,3 +1,11 @@
+/*
+ * @Author: Dreamice dreamice13@foxmail.com
+ * @Date: 2022-11-13 17:44:03
+ * @LastEditors: Dreamice dreamice13@foxmail.com
+ * @LastEditTime: 2023-11-14 14:41:54
+ * @FilePath: \ModaMS\src\i18n\en.js
+ * @Description: 
+ */
 export default {
   menus: {
     '/': 'Home',
@@ -52,6 +60,20 @@ export default {
     search: 'Search',
     add: 'Add Website',
     placeholder: 'Please enter a website name to search for'
+  },
+  tableSaying: {
+    id: 'Id',
+    name: 'Saying',
+    author: 'Author',
+    book: 'Book',
+    article: 'Article',
+    create_time: 'CreateTime',
+    update_time: 'UpdateTime',
+    description: 'Description',
+    action: 'Action',
+    search: 'Search',
+    add: 'Add Saying',
+    placeholder: 'Please enter a Saying keyword to search for'
   },
   tableArticle: {
     name: 'name',
