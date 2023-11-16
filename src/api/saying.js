@@ -29,3 +29,26 @@ export const deleteSaying = (id) => {
         method: 'delete'
     })
 }
+
+/**
+ * @description: 语录分组
+ * @param {*} params
+ * @return {*}
+ */
+export const groupSaying = () => {
+    return request({
+        url: 'groupSaying',
+        // params
+    })
+}
+
+/**
+ * @description: 语录总数
+ * @return {*}
+ */
+export const totalSaying = () => {
+    return request({
+        url: 'totalSaying',
+        // params
+    })
+}

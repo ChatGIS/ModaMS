@@ -29,3 +29,23 @@ export const deleteWebsite = (id) => {
         method: 'delete'
     })
 }
+/**
+ * @description: 网站总数
+ * @return {*}
+ */
+export const totalWeb = () => {
+    return request({
+        url: 'totalWeb',
+        // params
+    })
+}
+/**
+ * @description: 网站分组
+ * @return {*}
+ */
+export const groupWeb = () => {
+    return request({
+        url: 'groupWeb',
+        // params
+    })
+}
