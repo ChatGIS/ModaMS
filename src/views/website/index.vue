@@ -37,7 +37,7 @@
       </el-table-column>
     </el-table>
     <el-pagination v-model:currentPage=queryForm.pagenum v-model:page-size=queryForm.pagesize
-      :page-sizes="[7, 10, 20, 50]" :small="small" :disabled="disabled" :background="background"
+      :page-sizes="[10, 20, 50]" :small="small" :disabled="disabled" :background="background"
       layout="total, sizes, prev, pager, next, jumper" :total=total @size-change="handleSizeChange"
       @current-change="handleCurrentChange">
     </el-pagination>
@@ -57,7 +57,7 @@ import { isNull } from "@/utils/filters";
 const queryForm = ref({
   query: '',
   pagenum: 1,
-  pagesize: 7,
+  pagesize: 10,
   type: 0
 })
 const total = ref(0)

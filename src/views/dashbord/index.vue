@@ -2,7 +2,7 @@
  * @Author: Dreamice dreamice13@foxmail.com
  * @Date: 2022-11-13 17:44:03
  * @LastEditors: Dreamice dreamice13@foxmail.com
- * @LastEditTime: 2023-11-20 09:07:21
+ * @LastEditTime: 2023-11-27 10:35:10
  * @FilePath: \ModaMS\src\views\dashbord\index.vue
  * @Description: 
 -->
@@ -29,7 +29,8 @@
     <el-col :span="4"><div class="grid-content ep-bg-purple" /></el-col>
     <el-col :span="4"><div class="grid-content ep-bg-purple-light" /></el-col>
   </el-row>
-  <div id="sayingPie" style="width: 70%; height: 400px;"></div>
+  <!-- <div id="sayingPie" style="width: 70%; height: 400px;"></div> -->
+  <div ref="sayingRef" style="width: 70%; height: 400px;"></div>
   <div ref="chartRef" style="width: 70%; height: 400px;"></div>
 </template>
 
@@ -39,6 +40,7 @@ import { groupSaying, totalSaying } from "@/api/saying"
 import { groupWeb, totalWeb } from "@/api/website"
 import * as echarts from 'echarts';
 
+const sayingRef = ref(null);
 const chartRef = ref(null);
 const sayingTotalCount = ref(0);
 const webTotalCount = ref(0);
@@ -62,7 +64,7 @@ const initTotal = async () => {
  */
 const initSayingGroup = async () => {
   const res = await groupSaying()
-  const chart = echarts.init(document.getElementById('sayingPie'));
+  const chart = echarts.init(sayingRef.value);
   const option = {
     title: {
       text: '语录',
